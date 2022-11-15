@@ -1,0 +1,62 @@
+@mixin flex($flex-type:row, $justify:initial) {
+    display: flex;
+    flex-direction: $flex-type;
+    justify-content: $justify;
+}
+
+@mixin upSection {
+    background-color: #ca6df6;
+    height: 66.666667%;
+}
+
+@mixin bottomSection {
+    padding: 1rem;
+    background-color: #292929;
+    height: 50%;
+}
+
+.main {
+    @include flex(column);
+    height: 18rem;
+    width: 16rem;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 0.75rem;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.upSection {
+    @include upSection;
+}
+
+.bottomSection {
+    @include bottomSection;
+    @include flex(column,space-between);
+
+    div:first-of-type {
+        @include flex;
+
+        span {
+            color: white;
+        }
+
+        span:first-of-type {
+            width: max-content;
+            margin-right: 1.25rem
+        }
+    
+    }
+
+    div {
+        @include flex(row,space-between);
+        span {
+            color: white;
+        }
+        span:first-of-type {
+            color: #989898;
+        }
+    }
+
+    
+}

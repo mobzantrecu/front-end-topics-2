@@ -1,0 +1,44 @@
+
+//Topics
+
+//Variables
+$colors: (
+    primary: #005DFF,
+    accent: #005DFF
+);
+
+$desktop: 840px;
+
+//mixin - tambien pueden traer variables y darle valores por defecto
+// @mixin desktop ($fondo, $ancho)
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+
+        @content;
+    };
+};
+
+
+//functions
+@function color($color-name) {
+    @return map-get($colors, $color-name );
+}
+
+body {
+
+    background-color: color(primary);
+    //using functions
+    @include desktop {
+        background-color: #005DFF
+
+    };
+    // nesting
+    div {
+        color: color(accent);
+    }
+};
+
+  
+
+  
+
