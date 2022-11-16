@@ -10,11 +10,11 @@ Style component Header with radom icon and a button on the end
 - POSTCSS and plugins like nano css, and autoprefixer (agrega automaticamente los prefijos de cada navegador para features experimentales)
 - Style Lint
 - SASS
+- Route based lazy loading https://www.youtube.com/watch?v=UVsX7A2wfLo&ab_channel=GentlemanProgramming
+- Portals
 
 Falta
 
-- Route based lazy loading https://www.youtube.com/watch?v=UVsX7A2wfLo&ab_channel=GentlemanProgramming
-- Portals
 - Theming with styled component
 - GraphQl Apollo con React query?
 - React Query
