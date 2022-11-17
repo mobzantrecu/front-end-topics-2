@@ -5,7 +5,6 @@ import { AlertProvider } from "./components/AlertPortal/AlertPortal";
 import ErrorBoundary from "./components/ErrorBoundary";
 import "./components/web/rich-text";
 import NotFoundPage from "./pages/404";
-
 const Home = React.lazy(() => import("./pages/Home"));
 const Detail = React.lazy(() => import("./pages/Detail"));
 

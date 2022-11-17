@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import ReactDOM from "react-dom";
 import useAlert from "./useAlert";
 
 export const AlertContext = createContext({} as any);
 
-export const AlertProvider = ({ children }) => {
+export const AlertProvider = ({ children }: any) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
   const [alertText, setAlertText] = useState("");

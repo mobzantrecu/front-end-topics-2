@@ -12,8 +12,9 @@ Style component Header with radom icon and a button on the end
 - SASS
 - Route based lazy loading https://www.youtube.com/watch?v=UVsX7A2wfLo&ab_channel=GentlemanProgramming
 - Portals
+- Decorators and reflect-metadata
 
-Falta
+  Falta
 
 - Theming with styled component
 - GraphQl Apollo con React query?

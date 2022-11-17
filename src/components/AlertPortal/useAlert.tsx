@@ -17,7 +17,7 @@ const useAlert = () => {
     setAlertText,
   } = context;
 
-  const renderAlert = (text) => {
+  const renderAlert = (text: any) => {
     setAlertText(text);
     setTimeout(() => {
       setIsVisible(true);

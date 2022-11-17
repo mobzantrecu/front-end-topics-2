@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "module": "esnext",
     "lib": ["es2017", "dom", "dom.iterable"],
     "declaration": true,
@@ -18,6 +19,6 @@
     "useDefineForClassFields": false,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/components/Card/index.tsx"],
+  "include": ["src/**/*.ts","src/**/*.tsx", "globals.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
