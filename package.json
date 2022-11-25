@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:wasm": "cd wasm-lib && wasm-pack build --target web --out-dir pkg",
     "preview": "vite preview",
     "compile": "graphql-codegen",
     "watch": "graphql-codegen -w"
@@ -25,7 +26,9 @@
     "react-router-dom": "^6.4.3",
     "reflect-metadata": "^0.1.13",
     "sort-by": "^1.2.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "vite-plugin-wasm": "^3.1.0",
+    "wasm-lib": "file:wasm-lib/pkg"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.13.12",
