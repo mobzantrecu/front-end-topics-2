@@ -1,7 +1,3 @@
-2 pantallas, lista de cards y detalle de la misma con una opcion para detalle con un modal.
-La lista de cards seria con React Query y seria una especie de infinite scroll
-Style component Header with radom icon and a button on the end
-
 ## Topics Covered
 
 - Tailwind
@@ -13,12 +9,12 @@ Style component Header with radom icon and a button on the end
 - Route based lazy loading https://www.youtube.com/watch?v=UVsX7A2wfLo&ab_channel=GentlemanProgramming
 - Portals
 - Decorators and reflect-metadata
+- Theming with styled component
+- GraphQl Apollo con React query
+- React Query with Rest
 
   Falta
 
-- Theming with styled component
-- GraphQl Apollo con React query?
-- React Query
 - Simple WASM with Rust
 - Sockets
 - Memory Leaks

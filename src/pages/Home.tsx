@@ -1,9 +1,14 @@
 import React from "react";
+import { useQuery } from "react-query";
+import { useTheme } from "styled-components";
 import AlertPortal from "../components/AlertPortal/AlertPortal";
 import useAlert from "../components/AlertPortal/useAlert";
+import Button from "../components/Button/Button";
 import Card from "../components/Card/Card";
 import ScssCard from "../components/Card/ScssCard";
 import Product from "../model/Product/product-model";
+import { getCharacters } from "../services/rest/character.service";
+import { useGetCharacters } from "../services/useRequest";
 import getColumns from "../utils";
 
 export {};
@@ -16,9 +21,14 @@ declare global {
 }
 
 const Home = () => {
+  const { data } = useGetCharacters();
+  const { data: restData } = useQuery("todos", getCharacters);
+
+  console.log("graphql data", data);
+  console.log("rest data", restData);
+
   const { renderAlert } = useAlert();
   const columns = getColumns(Product);
-  console.log(columns);
 
   const params = {
     row: {
@@ -30,6 +40,11 @@ const Home = () => {
   if (columns[1].renderCell) {
     test = columns[1].renderCell(params);
   }
+
+  // Te permite usar valores customisables como el color 'main'
+  // Se esta usando en el botton
+  const theme = useTheme();
+  console.log("Theme", theme);
 
   return (
     <>
@@ -46,6 +61,7 @@ const Home = () => {
         <main className="p-20 flex justify-around">
           <Card />
           <ScssCard />
+          <Button />
         </main>
       </div>
     </>
