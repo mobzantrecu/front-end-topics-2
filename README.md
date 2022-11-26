@@ -12,11 +12,10 @@
 - Theming with styled component
 - GraphQl Apollo con React query
 - React Query with Rest
+- Simple WASM with Rust => https://tkat0.github.io/posts/how-to-create-a-react-app-with-rust-and-wasm
+- Memory Leaks => I already use solve this with an abortController or an cancel token for axios on api calls inside an useEffect.
+- Prefetching and preloading components => Home component and Lazy loading
 
   Falta
-
-- Simple WASM with Rust => https://tkat0.github.io/posts/how-to-create-a-react-app-with-rust-and-wasm
 - Sockets
-- Memory Leaks
-- Use progressive Hydration on react with vite?`
-- Prefetching and preload
+- Intersection Observer and lazy loading => https://www.youtube.com/watch?v=VcxXipZg1-0&ab_channel=midudev

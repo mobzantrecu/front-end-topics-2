@@ -1,16 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
-import { useTheme } from "styled-components";
-import AlertPortal from "../components/AlertPortal/AlertPortal";
-import useAlert from "../components/AlertPortal/useAlert";
-import Button from "../components/Button/Button";
-import Card from "../components/Card/Card";
-import ScssCard from "../components/Card/ScssCard";
-import Product from "../model/Product/product-model";
-import { getCharacters } from "../services/rest/character.service";
-import { useGetCharacters } from "../services/useRequest";
-import getColumns from "../utils";
-import init, { add } from "wasm-lib";
+
 export {};
 declare global {
   namespace JSX {
@@ -19,6 +7,22 @@ declare global {
     }
   }
 }
+
+import React, { Suspense, useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { useTheme } from "styled-components";
+import AlertPortal from "../components/AlertPortal/AlertPortal";
+import useAlert from "../components/AlertPortal/useAlert";
+import Button from "../components/Button/Button";
+import Card from "../components/Card/Card";
+import Product from "../model/Product/product-model";
+import { getCharacters } from "../services/rest/character.service";
+import { useGetCharacters } from "../services/useRequest";
+import getColumns from "../utils";
+import init, { add } from "wasm-lib";
+
+const scssCardPromise = import("../components/Card/ScssCard");
+const ScssCard = React.lazy(() => scssCardPromise);
 
 const Home = () => {
   const { data } = useGetCharacters();
@@ -53,8 +57,9 @@ const Home = () => {
   const theme = useTheme();
   console.log("Theme", theme);
 
+
   return (
-    <>
+    <Suspense fallback={<>Loading</>}>
       <AlertPortal />
       <div className="app">
         <header style={{ backgroundColor: "green" }}>
@@ -72,8 +77,9 @@ const Home = () => {
           <ScssCard />
           <Button />
         </main>
+        <h1>Interseption Observer </h1>
       </div>
-    </>
+    </Suspense>
   );
 };
 
