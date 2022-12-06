@@ -20,13 +20,39 @@ import { getCharacters } from "../services/rest/character.service";
 import { useGetCharacters } from "../services/useRequest";
 import getColumns from "../utils";
 import init, { add } from "wasm-lib";
+import socket from "../socket/socket";
 
 const scssCardPromise = import("../components/Card/ScssCard");
 const ScssCard = React.lazy(() => scssCardPromise);
 
+const sendPing = () => {
+  socket.emit('ping');
+}
+
+
 const Home = () => {
   const { data } = useGetCharacters();
   const { data: restData } = useQuery("todos", getCharacters);
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      console.log('connected');
+    });
+  
+    socket.on('disconnect', () => {
+      console.log('disconnect');
+    });
+  
+    socket.on('message', () => {
+      console.log('ola')
+    });
+  
+    return () => {
+      socket.off('connect');
+      socket.off('disconnect');
+      socket.off('pong');
+    };
+  }, []);
 
   const [ans, setAns] = useState(0);
   useEffect(() => {
@@ -75,9 +101,8 @@ const Home = () => {
         <main className="p-20 flex justify-around">
           <Card />
           <ScssCard />
-          <Button />
+          <Button onClick={sendPing} />
         </main>
-        <h1>Interseption Observer </h1>
       </div>
     </Suspense>
   );

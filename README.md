@@ -15,7 +15,10 @@
 - Simple WASM with Rust => https://tkat0.github.io/posts/how-to-create-a-react-app-with-rust-and-wasm
 - Memory Leaks => I already use solve this with an abortController or an cancel token for axios on api calls inside an useEffect.
 - Prefetching and preloading components => Home component and Lazy loading
+- Sockets => https://www.youtube.com/watch?v=C1_Rw_H7Q3A&ab_channel=FaztCode
+- Intersection Observer and lazy loading => https://www.youtube.com/watch?v=VcxXipZg1-0&ab_channel=midudev
+  - A polifill is a little chunk of code that enables older browsers to use certain new features that are on, for example, google chrome v8
+
 
   Falta
-- Sockets
-- Intersection Observer and lazy loading => https://www.youtube.com/watch?v=VcxXipZg1-0&ab_channel=midudev
+
